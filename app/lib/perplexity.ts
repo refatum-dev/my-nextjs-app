@@ -40,6 +40,7 @@ export class PerplexityClient {
 
     const userMessage = `Znajdź 6 najważniejszych bieżących wiadomości z UWAGA: Polski na dzień ${updateTime}. Dla każdej wiadomości podaj:
     - Jasny, chwytliwy tytuł
+    - Tylko pozytywne wiadomości
     - Podsumowanie w 2-3 zdaniach
     - Źródło publikacji (link)
     - Unikaj tematów politycznych, skandali partyjnych i sporów ideologicznych, wojen i konfliktów.

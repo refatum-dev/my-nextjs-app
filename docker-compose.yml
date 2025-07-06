@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  poland-news-app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PERPLEXITY_API_KEY=${PERPLEXITY_API_KEY}
+    volumes:
+      - ./.env.local:/app/.env.local:ro
+    restart: unless-stopped
+
+  dev:
+    build:
+      context: .
+      target: base
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    command: npm run dev

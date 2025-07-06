@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Aktualności z Polski – Najnowsze informacje",
-  description: "Bądź na bieżąco z 5 najważniejszymi wiadomościami z Polski dzięki Perplexity AI.",
+  description: "Bądź na bieżąco z 6 najważniejszymi wiadomościami z Polski dzięki AI.",
   keywords: [
     "wiadomości Polska",
     "aktualności polskie"

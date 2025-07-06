@@ -1,5 +1,4 @@
 import 'cross-fetch/polyfill';
-import { NextRequest } from 'next/server';
 import { GET } from '../app/api/news/route';
 
 // Mock the PerplexityClient used inside the API route
@@ -31,8 +30,7 @@ describe('GET /api/news route handler', () => {
   it('should return an error when PERPLEXITY_API_KEY is not set', async () => {
     delete process.env.PERPLEXITY_API_KEY;
 
-    const req = new NextRequest(new Request('http://localhost/api/news'));
-    const res = await GET(req as any);
+    const res = await GET();
     const data = await res.json();
 
     expect(res.status).toBe(200);
@@ -43,8 +41,7 @@ describe('GET /api/news route handler', () => {
   it('should return news when PERPLEXITY_API_KEY is provided', async () => {
     process.env.PERPLEXITY_API_KEY = 'test-key';
 
-    const req = new NextRequest(new Request('http://localhost/api/news'));
-    const res = await GET(req as any);
+    const res = await GET();
     const data = await res.json();
 
     expect(res.status).toBe(200);

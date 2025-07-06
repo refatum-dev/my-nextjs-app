@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { PerplexityClient } from "../../lib/perplexity";
 
-export async function GET(_req: NextRequest) {
+export async function GET() {
   const apiKey = process.env.PERPLEXITY_API_KEY;
 
   if (!apiKey) {

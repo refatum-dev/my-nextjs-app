@@ -1,40 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# my-nextjs-app
 
-## Getting Started
+Aplikacja wykorzystuje model językowy (Perplexity LLM - sonar-pro) do generowania krótkich podsumowań 6 najnowszych wiadomości z Polski.
 
-First, run the development server:
+Działający link do aplikacji: https://my-nextjs-app-red.vercel.app/
 
+![Gif](public/app.gif)
+
+![Zrzut ekranu](public/screenshot.png)
+
+## Spis treści
+- [Funkcjonalności](#funkcjonalności)
+- [Technologie](#technologie)
+- [Instalacja](#instalacja)
+- [Konfiguracja](#konfiguracja-klucza-api-perplexity)
+- [Użycie](#użycie)
+- [Dokumentacja](#dokumentacja)
+- [Badge'e](#badgee)
+- [Licencja](#licencja)
+- [Autorzy](#autorzy)
+- [Podziękowania](#podziękowania)
+
+## Funkcjonalności
+- Podsumowanie 6 najnowszych wiadomości z Polski przy użyciu Perplexity LLM
+
+## Technologie
+- Next.js
+- SSR (Server-Side Rendering) i SSG (Static Site Generation)
+- Wbudowane API Routes
+- Tailwind CSS
+- Konfiguracja Docker oraz CI/CD (GitHub Actions)
+
+## Instalacja
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Klonowanie repozytorium
+git clone https://github.com/USER/my-nextjs-app.git
+cd my-nextjs-app
+
+# Instalacja zależności
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Konfiguracja klucza API Perplexity
+Utwórz plik `.env.local` w katalogu głównym projektu i dodaj:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```env
+PERPLEXITY_API_KEY=twoj_pplx_klucz
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Nie udostępniaj swojego klucza publicznie ani nie commituj go do repozytorium.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Uruchomienie w trybie deweloperskim
+```bash
+npm run dev
+```
+Aplikacja będzie dostępna pod adresem <http://localhost:3000>.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Budowanie wersji produkcyjnej
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Użycie
+Przykładowe wykorzystanie komponentu React w projekcie:
+```tsx
+import Button from '@/components/Button';
 
-To learn more about Next.js, take a look at the following resources:
+export default function Example() {
+  return <Button>Kliknij mnie</Button>;
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Dokumentacja
+Pełna dokumentacja Next.js znajduje się pod adresem <https://nextjs.org/docs>.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Badge'e
+![Build](https://img.shields.io/github/actions/workflow/status/USER/my-nextjs-app/ci.yml?branch=main&label=build)
+![Coverage](https://img.shields.io/codecov/c/github/USER/my-nextjs-app)
 
-## Deploy on Vercel
+## Licencja
+Ten projekt jest objęty licencją MIT. Zobacz plik [LICENSE](LICENSE), aby poznać szczegóły.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Autorzy
+- Artem Andrieiev, grupa K2 – [@refatum-dev](https://github.com/refatum-dev)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Podziękowania
+- Podziękowania dla społeczności Next.js i Tailwind CSS
+
+---
+
+### Inne ważne pliki
+- **LICENSE** – pełna treść licencji
+- **CONTRIBUTING.md** – wytyczne dotyczące współtworzenia
+- **CHANGELOG.md** – historia zmian
+- **CODE_OF_CONDUCT.md** – zasady zachowania w projekcie
+- **.github/ISSUE_TEMPLATE/** – szablony dla zgłaszanych problemów
+- **.github/PULL_REQUEST_TEMPLATE.md** – szablon dla pull requestów
